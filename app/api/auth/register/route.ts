@@ -1,12 +1,13 @@
 import prismaClient from "@/app/config/prisma";
+import { hash } from "bcrypt";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest){
-    const {email, name} = await request.json();
+    const {email,password, name} = await request.json();
 
     try{
 
-    if(!email ||  !name ){ return null};
+    if(!email ||  !name || !password){ return null};
 
     const checkUser = await prismaClient.user.findUnique({
         where: {
@@ -18,10 +19,12 @@ export async function POST(request: NextRequest){
         return NextResponse.json({status: 409, json: "user is already exists, try signin"})
     }
 
+    const hashedPassword = await hash(password, 10);
     const user = await prismaClient.user.create({
         data: {
             email: email,
             name: name,
+            password: hashedPassword,
         }
     })
 
