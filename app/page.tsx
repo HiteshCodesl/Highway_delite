@@ -8,7 +8,6 @@ export default function Home() {
     <Header />
     <Hero />
     <div className="mt-10 mx-3 ">
-    <Notecard  />
     </div>
     </div>
   );

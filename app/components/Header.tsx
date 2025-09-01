@@ -8,7 +8,7 @@ export function Header() {
   const router = useRouter();
 
    return (
-    <div className="flex justify-between ">
+    <div className="flex justify-between mx-0 md:mx-10">
     <div className="flex gap-3 items-center">
         <Image
           src='/logo.png'

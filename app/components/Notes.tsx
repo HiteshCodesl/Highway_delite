@@ -10,6 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { Loader2, ArrowRight } from "lucide-react";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 
 interface Props{
@@ -40,8 +41,7 @@ export function Notes({isOpen, setIsOpen, onNoteAdded}: Props) {
     }finally{
       setLoading(false);
     }
-
-    }
+  }
 
   return (
     <div>

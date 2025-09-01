@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### 📝 Note App ###
 
-## Getting Started
+A secure and responsive note-taking web application built with Next.js and NextAuth.js.
+Users can sign up, sign in (via OTP authentication), and then create and delete personal notes.
+Unauthenticated users cannot add or delete notes.
 
-First, run the development server:
+### 🚀 Features ###
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔑 Authentication
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sign up and sign in with NextAuth.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Secure OTP-based login flow.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Only authenticated users can interact with notes.
 
-## Learn More
+🗒️ Notes Management
 
-To learn more about Next.js, take a look at the following resources:
+Add new notes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Delete existing notes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Notes are tied to the logged-in user (you can’t manage other users' notes).
 
-## Deploy on Vercel
+📱 Responsive Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Fully mobile-friendly.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Works smoothly across devices (desktop, tablet, and mobile).
+
+### Tech Stack ### 
+Frontend: Next.js, React, Tailwind CSS
+
+Authentication: NextAuth.js (with OTP flow)
+
+Backend: Next.js API routes + Database (Prisma + PostgreSQL, depending on your setup)
+
+State Management: React hooks
+
+HTTP Client: Axios
+
+### ScreenShots ###
+![SignIn Page Preview](./public/signin.png)
+![Signup Page Preview](./public/signup.png)
+![Landing Page Preview](./public/Mobile.png)
+![Landing Page Preview](./public/dashboard.png)
+
+
+### SETUP ###
+
+git clone https://github.com/your-username/note-app.git
+cd note-app
+
+### Environment variables ### 
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_secret_key
+
+# Database connection
+DATABASE_URL=your_database_url
+
+# Email/OTP provider setup
+EMAIL_SERVER=smtp://your_smtp_config
+EMAIL_FROM=your_email@example.com

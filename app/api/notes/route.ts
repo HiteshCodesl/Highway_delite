@@ -7,8 +7,6 @@ export async function POST(req: NextRequest) {
   const {content}  = await req.json();
   const session = await getServerSession(authOptions);
 
-  console.log(session?.user.id, content, "content and useID inside the route.ts");
-
   if(!session?.user?.id || !session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -61,7 +59,8 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id } = await req.json();
+  const id = await req.text();
+  console.log(id, "id in server")
 
   if (!id) {
     return NextResponse.json({ error: "Id required" }, { status: 400 });
