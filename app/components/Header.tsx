@@ -24,7 +24,7 @@ export function Header() {
        signout
     </Button> 
     :
-     <Button  onClick={() => router.push('/signup')} className="hover:cursor-pointer text-lg font-medium underline">
+     <Button  onClick={() => router.push('/login')} className="hover:cursor-pointer text-lg font-medium underline">
        signin
     </Button> }
     </div>
