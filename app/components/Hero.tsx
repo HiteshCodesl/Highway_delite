@@ -64,7 +64,11 @@ export function Hero() {
       </div>
 
       <Notes isOpen={isOpen} setIsOpen={setIsOpen} onNoteAdded={handleNoteAdded} />
+      {session && session.user ? 
       <p className="text-xl font-semibold mt-10">Notes</p>
+      : 
+      <p className="text-xl font-semibold mt-10">You dont have notes created yet...</p>
+      }
       {notes.map((note)=>(
         <Notecard key={note.id} note={note} onNoteDelete={handleNoteDelete}/>
       ))}

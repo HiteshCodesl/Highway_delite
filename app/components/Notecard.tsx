@@ -1,5 +1,5 @@
 "use client"
-import { Beer, Currency } from "lucide-react";
+import { Beer } from "lucide-react";
 
 import {
   Dialog,
